@@ -8,3 +8,5 @@ There are three ENV variables available:
 VNC_SCREEN_SIZE should generally be set to the screen resolution of your device, or match the size set in SCRCPY_ARGS (see below).
 VNC_PASSWORD is used to set a password for the VNC connection; this can be left empty for no password.
 SCRCPY_ARGS is used to set arguments for scrcpy. For example, SCRCPY_ARGS=-wS will set the "stay-awake" and "turn-screen-off" options (to turn off the physical device screen but keep the mirrored display from blanking). Check the [scrcpy docs](https://github.com/Genymobile/scrcpy/tree/master/doc) for all the flags that can be set here.
+
+NOTE: You MUST keep --no-audio in SCRCPY_ARGS unless you plan to edit the container to set up your own audio bridge. There is no audio support in the current VNC implementation and scrcpy will fail without this flag.
